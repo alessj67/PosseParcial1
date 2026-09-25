@@ -100,7 +100,7 @@ namespace PosseParcial1
                 StreamReader ar = new StreamReader("ARTICULOS.csv");
                 StreamWriter arExport = new StreamWriter(nomAr, false);
 
-                arExport.WriteLine("Codigo, Descripcion, Costo, Stock, Valor, Valor en Stock");
+                arExport.WriteLine("Codigo; Descripcion; Costo; Stock; Valor; Valor en Stock");
                 while (!ar.EndOfStream)
                 {
                     string lin = ar.ReadLine();
@@ -113,7 +113,7 @@ namespace PosseParcial1
                         int stock = Convert.ToInt32(datos[4]);
                         decimal valor = cost * stock;
 
-                        arExport.WriteLine(datos[0] + ',' + datos[1] + ',' + cost + ',' + stock + ',' + valor + ',' + valor);
+                        arExport.WriteLine(datos[0] + ';' + datos[1] + ';' + cost + ';' + stock + ';' + valor + ';' + valor);
                     }
                 }
                 ar.Close();
